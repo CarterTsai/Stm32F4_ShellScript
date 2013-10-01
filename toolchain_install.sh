@@ -51,3 +51,23 @@ wget http://svn.openmoko.org/developers/werner/neocon/neocon.c
 
 make
 
+# Build STM32F4 Toolchain
+# http://jeremyherbert.net/get/stm32f4_getting_started
+
+echo "### Install STM32F4"
+
+sudo apt-get install git zlib1g-dev libtool flex \
+     bison libgmp3-dev libmpfr-dev libncurses5-dev libmpc-dev \
+     autoconf texinfo build-essential libftdi-dev
+
+git clone https://github.com/MikeSmith/summon-arm-toolchain.git
+
+cd summon-arm-toolchain
+./summon-arm-toolchain
+
+export PATH=$PATH:$HOME/sat/bin
+
+echo "export PATH=\$PATH:\$HOME/sat/bin" >> $HOME/.profile
+
+echo "Check arm-none-eabi-gcc"
+arm-none-eabi-gcc --version
