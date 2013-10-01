@@ -36,3 +36,18 @@ echo "### Install OpenOCD"
 echo -e "all:\ninstall:" > doc/Makefile
 make 
 sudo make install 
+
+# http://wiki.openmoko.org/wiki/NeoCon 
+# neocon is a handy serial console utility (not only) for U-Boot.
+# Usage ./neocon -t 30 /dev/ttyACM0
+# to quit neocon type ~.
+
+echo "### Install neocon"
+mkdir neocon
+cd neocon 
+wget http://svn.openmoko.org/developers/werner/neocon/Makefile
+wget http://svn.openmoko.org/developers/werner/neocon/README
+wget http://svn.openmoko.org/developers/werner/neocon/neocon.c
+
+make
+
