@@ -18,6 +18,7 @@ make
 sudo make install
 sudo cp 49-stlinkv2.rules /etc/udev/rules.d/
 
+echo "export PATH=\$PATH:/opt/arm/bin/" >> $HOME/.profile
 
 echo "### Get OpenOCD"
 git clone git://openocd.git.sourceforge.net/gitroot/openocd/openocd
